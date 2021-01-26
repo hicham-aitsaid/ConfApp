@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanc"
+    android:orientation="vertical"
+    tools:context=".admin">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            >
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textColor="@color/blanc"
+                android:text="    accueil "
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                >
+            </TextView>
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:elevation="7dp"
+        android:background="@drawable/newinput"
+        android:layout_margin="5dp"
+        android:id="@+id/r2"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:text="Créer une réunion"
+            android:textColor="@color/mauve"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="18sp"></TextView>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/text1"
+            android:text="vous pouvez créer une réunion \nn'importe quelle moment"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:textSize="15sp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_height="wrap_content"></TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:elevation="7dp"
+        android:background="@drawable/newinput"
+        android:layout_margin="5dp"
+        android:id="@+id/r1"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/achat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:text="Attribuer des rôles"
+            android:textColor="@color/mauve"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="18sp"></TextView>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/achat"
+            android:text="vous pouvez attribuer des rôles\na plusieurs utilisateur"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:textSize="15sp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_height="wrap_content"></TextView>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

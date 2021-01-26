@@ -63,17 +63,25 @@ public class SignIn extends AppCompatActivity {
         inscreption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent =new Intent(getApplicationContext(),SignUp.class);
+                startActivity(intent);
             }
         });
     }
-
-    private void connect(String mail, String pswrd){
+    private void connect(final String mail, String pswrd){
         FirebaseAuth firebaseAuth;
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseAuth.signInWithEmailAndPassword(mail,pswrd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    if (mail.equalsIgnoreCase("administrateur@gmail.com")){
+                        Intent intent =new Intent(getApplicationContext(),admin.class);
+                        startActivity(intent);
+                    }else {
+                        Intent intent =new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
+                    }
                     Toast.makeText(getApplicationContext(), "Vous avez connecté", Toast.LENGTH_LONG).show();
                 }else  {
                     Toast.makeText(getApplicationContext(), "Connexion est echoué", Toast.LENGTH_LONG).show();
