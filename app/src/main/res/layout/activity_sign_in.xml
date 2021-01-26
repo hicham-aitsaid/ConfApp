@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,9 @@
     android:background="@color/blanc"
     android:orientation="vertical"
     tools:context=".SignIn">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ImageView
         android:layout_marginTop="-5dp"
@@ -24,18 +27,10 @@
         android:src="@drawable/ic_login"
         ></ImageView>
 
-    <ImageView
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/login_bottom"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="-15dp"
-        ></ImageView>
+
 
     <EditText
         android:textColor="@color/noir"
-        android:textColorHint="@color/noir"
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_marginLeft="40dp"
@@ -48,10 +43,10 @@
         android:drawablePadding="10dp"
         ></EditText>
 
-    <EditText
+        <EditText
+            android:inputType="textPassword"
         android:id="@+id/password"
         android:textColor="@color/noir"
-        android:textColorHint="@color/noir"
         android:layout_below="@id/email"
         android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
@@ -77,6 +72,7 @@
         android:textSize="17sp"
         ></Button>
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -88,12 +84,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginBottom="20dp"
             android:textColor="@color/noir"
             android:textSize="16sp"
             android:text="Vous voulez créer un compte ?"
             ></TextView>
 
         <TextView
+            android:layout_marginBottom="20dp"
             android:id="@+id/inscreption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,8 +105,10 @@
             ></TextView>
     </LinearLayout>
 
+    </RelativeLayout>
 
 
 
 
-</RelativeLayout>
+
+</ScrollView>
