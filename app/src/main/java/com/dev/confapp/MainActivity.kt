@@ -13,17 +13,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val intent = Intent(applicationContext, SignUp::class.java)
-        startActivity(intent)
+
     }
 
     fun EnterRoom(view : View){
-        val tkn = token.text.toString()
+        /*val tkn = token.text.toString()
         val generatedToken : String ? = null
         if (tkn == generatedToken){
             val intent = Intent(applicationContext,ChooseRoom::class.java)
             startActivity(intent)
-        }
+        }*/
+        val intent = Intent(applicationContext,ChooseRoom::class.java)
+        startActivity(intent)
 
     }
 }
