@@ -12,6 +12,7 @@
         android:layout_height="200dp" />
 
     <RelativeLayout
+        android:onClick="EnterRoomSource"
         android:background="@color/whitegray"
         android:elevation="7dp"
         android:layout_margin="20dp"

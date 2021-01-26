@@ -3,17 +3,15 @@ package com.dev.confapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_main.*
+import org.jitsi.meet.sdk.JitsiMeetActivity
+import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
     }
 
     fun EnterRoom(view : View){
@@ -23,8 +21,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(applicationContext,ChooseRoom::class.java)
             startActivity(intent)
         }*/
-        val intent = Intent(applicationContext,ChooseRoom::class.java)
-        startActivity(intent)
+       /* val intent = Intent(applicationContext,ChooseRoom::class.java)
+        startActivity(intent)*/
+
+
+        val options = JitsiMeetConferenceOptions.Builder()
+            .setRoom("testtest")
+            .build()
+        JitsiMeetActivity.launch(this, options)
 
     }
 }

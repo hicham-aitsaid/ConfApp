@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SourceRoom"></activity>
-        <activity android:name=".ChooseRoom" />
+        <activity android:name=".ChooseRoom"></activity>
+        <activity android:name=".SourceRoom" />
         <activity android:name=".SignIn" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">

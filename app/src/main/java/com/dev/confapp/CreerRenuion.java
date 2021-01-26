@@ -18,6 +18,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 
 public class CreerRenuion extends AppCompatActivity {
@@ -67,6 +71,18 @@ public class CreerRenuion extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
+                                try {
+                                    JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
+                                            .setServerURL(new URL("https://meet.jit.si"))
+                                            .setRoom("testtest")
+                                            .setAudioMuted(false)
+                                            .setVideoMuted(false)
+                                            .setAudioOnly(false)
+                                            .setWelcomePageEnabled(false)
+                                            .build();
+                                } catch (MalformedURLException e) {
+                                    e.printStackTrace();
+                                }
                                 Toast.makeText(getApplicationContext(), "la réunion est ajouté avec succes", Toast.LENGTH_LONG).show();
                                 Intent intent =new Intent(getApplicationContext(),admin.class);
                                 startActivity(intent);
