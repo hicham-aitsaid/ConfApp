@@ -40,7 +40,6 @@ public class SignIn extends AppCompatActivity {
         SpannableString content = new SpannableString(mystring);
         content.setSpan(new UnderlineSpan(), 0, mystring.length(), 0);
         inscreption.setText(content);
-
         connecter=findViewById(R.id.connecter);
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
