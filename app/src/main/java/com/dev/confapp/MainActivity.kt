@@ -6,6 +6,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
+import org.jitsi.meet.sdk.JitsiMeetFragment
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +17,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun EnterRoom(view : View){
+
+        val uuid : UUID = UUID.randomUUID()
+        /*println(" UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU" + uuid)*/
+
         /*val tkn = token.text.toString()
         val generatedToken : String ? = null
         if (tkn == generatedToken){
@@ -25,10 +31,25 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)*/
 
 
-        val options = JitsiMeetConferenceOptions.Builder()
+        /*val options = JitsiMeetConferenceOptions.Builder()
             .setRoom("testtest")
+            .setVideoMuted(false)
             .build()
-        JitsiMeetActivity.launch(this, options)
+        JitsiMeetActivity.launch(this, options)*/
+
+
+        val options1 = JitsiMeetConferenceOptions.Builder()
+            .setRoom("testtest")
+            .setVideoMuted(true)
+            .build()
+        JitsiMeetActivity.launch(this, options1)
+
+       /* val options = JitsiMeetConferenceOptions.Builder()
+            .setRoom("test2")
+            .setAudioMuted(true)
+            .build()
+        JitsiMeetActivity.launch(this,options)
+*/
 
     }
 }

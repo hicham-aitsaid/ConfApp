@@ -75,8 +75,8 @@ public class CreerRenuion extends AppCompatActivity {
                                     JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
                                             .setServerURL(new URL("https://meet.jit.si"))
                                             .setRoom("testtest")
-                                            .setAudioMuted(false)
-                                            .setVideoMuted(false)
+                                            .setAudioMuted(true)
+                                            .setVideoMuted(true)
                                             .setAudioOnly(false)
                                             .setWelcomePageEnabled(false)
                                             .build();
