@@ -18,9 +18,7 @@
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="89dp">
-
         <TextView
-
             android:textColor="@color/mauve"
             android:textSize="20dp"
             android:layout_marginHorizontal="15dp"
@@ -28,10 +26,10 @@
             android:text="SRC - Source"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
     </RelativeLayout>
 
     <RelativeLayout
+        android:onClick="EnterRoomENG"
         android:background="@color/whitegray"
         android:elevation="7dp"
         android:layout_margin="20dp"
@@ -46,9 +44,10 @@
             android:text="ENG - Anglais"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
     </RelativeLayout>
+
     <RelativeLayout
+        android:onClick="EnterRoomFR"
         android:background="@color/whitegray"
         android:elevation="7dp"
         android:layout_margin="20dp"
@@ -63,9 +62,10 @@
             android:text="FRA - Français"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
     </RelativeLayout>
+
     <RelativeLayout
+        android:onClick="EnterRoomAR"
         android:background="@color/whitegray"
         android:elevation="7dp"
         android:layout_margin="20dp"

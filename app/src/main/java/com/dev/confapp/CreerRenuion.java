@@ -42,7 +42,6 @@ public class CreerRenuion extends AppCompatActivity {
             public void onClick(View view) {
                 String lenom=name.getText().toString();
                 String letoken=token.getText().toString();
-
                 if (lenom.length()<5){
                     Toast.makeText(getApplicationContext(), "Entrer le nom de la réunion", Toast.LENGTH_LONG).show();
                 }else if (!(letoken.length()==6)){
@@ -52,8 +51,6 @@ public class CreerRenuion extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     private void addRenuion(final String lenom, final String letoken) {
@@ -71,18 +68,7 @@ public class CreerRenuion extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                try {
-                                    JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
-                                            .setServerURL(new URL("https://meet.jit.si"))
-                                            .setRoom("testtest")
-                                            .setAudioMuted(true)
-                                            .setVideoMuted(true)
-                                            .setAudioOnly(false)
-                                            .setWelcomePageEnabled(false)
-                                            .build();
-                                } catch (MalformedURLException e) {
-                                    e.printStackTrace();
-                                }
+
                                 Toast.makeText(getApplicationContext(), "la réunion est ajouté avec succes", Toast.LENGTH_LONG).show();
                                 Intent intent =new Intent(getApplicationContext(),admin.class);
                                 startActivity(intent);
@@ -92,9 +78,43 @@ public class CreerRenuion extends AppCompatActivity {
                 }
             }
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) { }
         });
+        try {
+            JitsiMeetConferenceOptions SRC = new JitsiMeetConferenceOptions.Builder()
+                    .setServerURL(new URL("https://meet.jit.si"))
+                    .setRoom(letoken)
+                    .setAudioMuted(true)
+                    .setVideoMuted(true)
+                    .setAudioOnly(false)
+                    .setWelcomePageEnabled(false)
+                    .build();
+                          /*          JitsiMeetConferenceOptions AR = new JitsiMeetConferenceOptions.Builder()
+                                            .setServerURL(new URL("https://meet.jit.si"))
+                                            .setRoom(letoken+"AR")
+                                            .setAudioMuted(true)
+                                            .setVideoMuted(true)
+                                            .setAudioOnly(false)
+                                            .setWelcomePageEnabled(false)
+                                            .build();
+                                    JitsiMeetConferenceOptions FR = new JitsiMeetConferenceOptions.Builder()
+                                            .setServerURL(new URL("https://meet.jit.si"))
+                                            .setRoom(letoken+"FR")
+                                            .setAudioMuted(true)
+                                            .setVideoMuted(true)
+                                            .setAudioOnly(false)
+                                            .setWelcomePageEnabled(false)
+                                            .build();
+                                    JitsiMeetConferenceOptions ENG = new JitsiMeetConferenceOptions.Builder()
+                                            .setServerURL(new URL("https://meet.jit.si"))
+                                            .setRoom(letoken+"ENG")
+                                            .setAudioMuted(true)
+                                            .setVideoMuted(true)
+                                            .setAudioOnly(false)
+                                            .setWelcomePageEnabled(false)
+                                            .build();*/
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 }
