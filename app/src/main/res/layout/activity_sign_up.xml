@@ -4,39 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanc"
     tools:context=".SignUp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_marginTop="-5dp"
-            android:layout_alignParentTop="true"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/signup_top" />
+
 
         <ImageView
             android:id="@+id/imageview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="290dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:background="@drawable/ic_login" />
+            android:background="@drawable/signup" />
 
 
         <EditText
             android:drawablePadding="10dp"
             android:drawableLeft="@drawable/ic_nom"
             android:hint="Nom"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_height="50dp"
+            android:elevation="7dp"
+
+            android:background="@drawable/bgnew"
+            android:padding="15dp"
             android:layout_below="@id/imageview"
             android:id="@+id/Nom"
             android:layout_width="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp" />
+            android:layout_marginHorizontal="40dp" />
 
         <EditText
             android:textColor="@color/noir"
@@ -44,15 +43,20 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
+            android:elevation="7dp"
+
             android:layout_marginRight="40dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:padding="15dp"
             android:layout_below="@+id/Nom"
             android:hint="Email"
+            android:background="@drawable/bgnew"
             android:inputType="textEmailAddress"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="10dp" />
 
         <EditText
+            android:background="@drawable/bgnew"
             android:inputType="textPassword"
             android:id="@+id/password"
             android:textColor="@color/noir"
@@ -61,9 +65,11 @@
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:hint="Mot de passe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:elevation="7dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:padding="15dp"
             android:drawablePadding="10dp" />
 
         <Button
@@ -75,6 +81,8 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="40dp"
+            android:elevation="7dp"
+
             android:background="@color/mauve"
             android:text="S'inscrire"
             android:textAllCaps="false"

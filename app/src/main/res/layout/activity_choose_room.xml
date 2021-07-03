@@ -4,33 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanc"
     android:orientation="vertical"
-    tools:context=".ChooseRoom">
+    tools:context=".test">
 
-    <ImageView
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
-
-    <RelativeLayout
-        android:onClick="EnterRoomSource"
-        android:background="@color/whitegray"
-        android:elevation="7dp"
-        android:layout_margin="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="89dp">
-        <TextView
-            android:textColor="@color/mauve"
-            android:textSize="20dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_centerVertical="true"
-            android:text="SRC - Source"
+        android:layout_height="wrap_content"
+        android:background="@color/mauve">
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
+            android:layout_height="match_parent"
+
+            >
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textColor="@color/blanc"
+                android:text="   selectionner la reunion "
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                >
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="-80dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <RelativeLayout
-        android:onClick="EnterRoomENG"
-        android:background="@color/whitegray"
+        android:id="@+id/r1"
+        android:background="@drawable/blancbtn"
         android:elevation="7dp"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
@@ -39,17 +59,41 @@
         <TextView
             android:textColor="@color/mauve"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:layout_marginHorizontal="15dp"
             android:layout_centerVertical="true"
-            android:text="ENG - Anglais"
+            android:text="SRC - Source"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </RelativeLayout>
 
     <RelativeLayout
-        android:onClick="EnterRoomFR"
-        android:background="@color/whitegray"
+        android:id="@+id/r2"
+
         android:elevation="7dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/blancbtn"
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:textColor="@color/mauve"
+            android:textSize="20dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:text="ENG - Anglais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/r3"
+        android:elevation="7dp"
+        android:background="@drawable/blancbtn"
+
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="80dp">
@@ -60,18 +104,19 @@
             android:layout_marginHorizontal="15dp"
             android:layout_centerVertical="true"
             android:text="FRA - Français"
+            android:textStyle="bold"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-    </RelativeLayout>
 
+    </RelativeLayout>
     <RelativeLayout
-        android:onClick="EnterRoomAR"
-        android:background="@color/whitegray"
+        android:id="@+id/r4"
+        android:background="@drawable/blancbtn"
         android:elevation="7dp"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="80dp">
-
         <TextView
             android:textColor="@color/mauve"
             android:textSize="20dp"
@@ -79,9 +124,12 @@
             android:layout_centerVertical="true"
             android:text="AR - Arabe"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            />
 
     </RelativeLayout>
+    </LinearLayout>
 
 
 
