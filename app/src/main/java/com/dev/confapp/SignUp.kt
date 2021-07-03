@@ -26,16 +26,16 @@ class SignUp : AppCompatActivity() {
         val mail = email.text.toString()
         val pass = password.text.toString()
         val name = Nom.text.toString()
-        val uniqueID = FirebaseAuth.getInstance().currentUser!!.uid
         mAuth!!.createUserWithEmailAndPassword(mail, pass)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val myRef = database.getReference("Users")
+                    val uniqueID = FirebaseAuth.getInstance().currentUser!!.uid
                     myRef.child(uniqueID).child("name").setValue(name)
                     myRef.child(uniqueID).child("email").setValue(mail)
                     myRef.child(uniqueID).child("type").setValue("audience")
                     myRef.child(uniqueID).child("uid").setValue(uniqueID)
-                    val intent = Intent(applicationContext,MainActivity::class.java)
+                    val intent = Intent(applicationContext,test::class.java)
                     startActivity(intent)
                     Toast.makeText(this, "compte créé", Toast.LENGTH_SHORT).show()
                 } else {

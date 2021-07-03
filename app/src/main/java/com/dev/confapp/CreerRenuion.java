@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -22,12 +24,19 @@ import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CreerRenuion extends AppCompatActivity {
 
     EditText name,token;
     Button add;
+    FirebaseDatabase database;
+    DatabaseReference userRef;
+    AutoCompleteTextView autoCompleteTextView;
+    private static final String[] COUNTRIES = new String[]{
+            "Afghanistan", "Albania", "Algeria", "Andorra", "Angola"
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +45,35 @@ public class CreerRenuion extends AppCompatActivity {
         name=findViewById(R.id.name);
         token=findViewById(R.id.token);
         add=findViewById(R.id.add);
+
+
+        final ArrayList<String> listechantier = new ArrayList<>();
+        database = FirebaseDatabase.getInstance();
+        userRef = database.getReference("Users");
+        userRef.keepSynced(true);
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    if (!(listechantier.contains(dataSnapshot.child("email").getValue().toString()))) {
+                        listechantier.add(dataSnapshot.child("email" +
+                                "" +
+                                "").getValue().toString());
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        String[] lista1 = new String[listechantier.size()];
+        lista1 =listechantier.toArray(lista1);
+        autoCompleteTextView =findViewById(R.id.admin);
+        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,lista1);
+        autoCompleteTextView.setAdapter(adapter);
+
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +86,10 @@ public class CreerRenuion extends AppCompatActivity {
                 }else if (!(letoken.length()==6)){
                     Toast.makeText(getApplicationContext(), "le Token doit être sur six chiffres", Toast.LENGTH_LONG).show();
                 }else {
+                    Intent intent =new Intent(getApplicationContext(),role.class);
+                    intent.putExtra("token",letoken);
+                    intent.putExtra("nom",lenom);
+
                     addRenuion(lenom,letoken);
                 }
             }
@@ -74,7 +116,7 @@ public class CreerRenuion extends AppCompatActivity {
                                 try {
                                     JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
                                             .setServerURL(new URL("https://meet.jit.si"))
-                                            .setRoom("testtest")
+                                            .setRoom(lenom)
                                             .setAudioMuted(true)
                                             .setVideoMuted(true)
                                             .setAudioOnly(false)

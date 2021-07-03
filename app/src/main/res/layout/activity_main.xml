@@ -4,35 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanc"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:id="@+id/tokentext"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"
-        android:text="Enter Room Token"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:src="@drawable/az"></ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tokentext"
+        android:text="Jeton de la rénuion"
+        android:textColor="@color/mauve"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textStyle="bold"></TextView>
 
     <EditText
+        android:background="@drawable/bgnew"
         android:id="@+id/token"
         android:inputType="number"
         android:layout_below="@+id/tokentext"
         android:layout_centerHorizontal="true"
-        android:hint="Token"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="200dp"
+        android:elevation="7dp"
+        android:hint="Saisissez le jeton"
+        android:textColor="@color/noir"
+        android:gravity="center"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 
     <Button
+
         android:onClick="EnterRoom"
-        android:layout_marginTop="50dp"
-        android:layout_marginHorizontal="80dp"
-        android:textColor="#FFFFFF"
-        android:background="@color/mauve"
-        android:text="Enter Room"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="50dp"
+        android:textColor="@color/blanc"
+        android:elevation="7dp"
+        android:background="@drawable/button"
+        android:text="Rentrer à la réunion"
         android:layout_below="@+id/token"
+        android:textAllCaps="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 
 public class admin extends AppCompatActivity {
 
-    RelativeLayout r1,r2;
+    RelativeLayout r1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,6 @@ public class admin extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
 
         r1=findViewById(R.id.r2);
-        r2=findViewById(R.id.r1);
 
         r1.setOnClickListener(new View.OnClickListener() {
             @Override
