@@ -4,19 +4,19 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logointer"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logointer"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".role"></activity>
-        <activity android:name=".test" />
+        <activity android:name=".SignIn" />
         <activity android:name=".admin" />
         <activity android:name=".SourceRoom" />
         <activity android:name=".CreerRenuion" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".SignIn">
+        <activity android:name=".test">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
