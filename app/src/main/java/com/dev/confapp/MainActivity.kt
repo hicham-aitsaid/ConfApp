@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.react.modules.core.PermissionListener
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetActivityInterface
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
@@ -14,6 +15,9 @@ import java.net.URL
 
 
 class MainActivity : AppCompatActivity(), JitsiMeetActivityInterface {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,13 +25,12 @@ class MainActivity : AppCompatActivity(), JitsiMeetActivityInterface {
 
     fun EnterRoom(view : View){
 
-        val view = JitsiMeetView(this)
-        val options = JitsiMeetConferenceOptions.Builder()
-            .setServerURL(URL("https://meet.jit.si/"))
-            .setRoom("222222")
-            .setAudioMuted(true)
-            .build()
-        JitsiMeetActivity.launch(this, options)
+        var token = tok.text.toString()
+        val intent = Intent(this,test::class.java)
+        intent.putExtra("token",token)
+        startActivity(intent)
+
+
     }
 
     override fun requestPermissions(p0: Array<out String>?, p1: Int, p2: PermissionListener?) {

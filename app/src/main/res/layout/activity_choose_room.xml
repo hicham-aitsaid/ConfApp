@@ -49,6 +49,7 @@
         android:layout_height="match_parent">
 
     <RelativeLayout
+        android:onClick="EnterRoomSource"
         android:id="@+id/r1"
         android:background="@drawable/blancbtn"
         android:elevation="7dp"
@@ -70,7 +71,7 @@
 
     <RelativeLayout
         android:id="@+id/r2"
-
+        android:onClick="EnterRoomENG"
         android:elevation="7dp"
         android:layout_margin="20dp"
         android:background="@drawable/blancbtn"
@@ -93,7 +94,7 @@
         android:id="@+id/r3"
         android:elevation="7dp"
         android:background="@drawable/blancbtn"
-
+        android:onClick="EnterRoomFR"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="80dp">
@@ -111,6 +112,7 @@
 
     </RelativeLayout>
     <RelativeLayout
+        android:onClick="EnterRoomAR"
         android:id="@+id/r4"
         android:background="@drawable/blancbtn"
         android:elevation="7dp"
