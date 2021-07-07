@@ -25,7 +25,7 @@
 
     <EditText
         android:background="@drawable/bgnew"
-        android:id="@+id/token"
+        android:id="@+id/tok"
         android:inputType="number"
         android:layout_below="@+id/tokentext"
         android:layout_centerHorizontal="true"
@@ -47,7 +47,7 @@
         android:elevation="7dp"
         android:background="@drawable/button"
         android:text="Rentrer à la réunion"
-        android:layout_below="@+id/token"
+        android:layout_below="@+id/tok"
         android:textAllCaps="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

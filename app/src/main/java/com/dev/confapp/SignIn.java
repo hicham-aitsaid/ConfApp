@@ -79,7 +79,7 @@ public class SignIn extends AppCompatActivity {
                         Intent intent =new Intent(getApplicationContext(),admin.class);
                         startActivity(intent);
                     }else {
-                        Intent intent =new Intent(getApplicationContext(),test.class);
+                        Intent intent =new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(intent);
                     }
                     Toast.makeText(getApplicationContext(), "Vous avez connecté", Toast.LENGTH_LONG).show();

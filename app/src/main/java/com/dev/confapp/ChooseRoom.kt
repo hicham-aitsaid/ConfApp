@@ -2,6 +2,7 @@ package com.dev.confapp
 
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.react.modules.core.PermissionListener
 import org.jitsi.meet.sdk.JitsiMeetActivity
@@ -23,45 +24,7 @@ class ChooseRoom : AppCompatActivity(),JitsiMeetActivityInterface {
 
     }
 
-    fun EnterRoomSource(view : View){
-        val view = JitsiMeetView(this)
-        val options = JitsiMeetConferenceOptions.Builder()
-            .setServerURL(URL("https://meet.jit.si/"))
-            .setRoom(extra)
-            .setAudioMuted(true)
-            .build()
-        JitsiMeetActivity.launch(this, options)
-    }
 
-    fun EnterRoomENG(view : View){
-        val view = JitsiMeetView(this)
-        val options = JitsiMeetConferenceOptions.Builder()
-            .setServerURL(URL("https://meet.jit.si/"))
-            .setRoom(extra+"ENG")
-            .setAudioMuted(true)
-            .build()
-        JitsiMeetActivity.launch(this, options)
-    }
-
-    fun EnterRoomFR(view : View){
-        val view = JitsiMeetView(this)
-        val options = JitsiMeetConferenceOptions.Builder()
-            .setServerURL(URL("https://meet.jit.si/"))
-            .setRoom(extra+"FR")
-            .setAudioMuted(true)
-            .build()
-        JitsiMeetActivity.launch(this, options)
-    }
-
-    fun EnterRoomAR(view : View){
-        val view = JitsiMeetView(this)
-        val options = JitsiMeetConferenceOptions.Builder()
-            .setServerURL(URL("https://meet.jit.si/"))
-            .setRoom(extra+"AR")
-            .setAudioMuted(true)
-            .build()
-        JitsiMeetActivity.launch(this, options)
-    }
 
     override fun requestPermissions(p0: Array<out String>?, p1: Int, p2: PermissionListener?) {
         TODO("Not yet implemented")
