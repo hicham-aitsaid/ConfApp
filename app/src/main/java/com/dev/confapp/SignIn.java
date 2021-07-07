@@ -75,7 +75,7 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    if (mail.equalsIgnoreCase("administrateur@gmail.com")){
+                    if (mail.equalsIgnoreCase("admin@gmail.com")){
                         Intent intent =new Intent(getApplicationContext(),admin.class);
                         startActivity(intent);
                     }else {

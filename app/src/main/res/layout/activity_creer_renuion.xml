@@ -74,6 +74,19 @@
         android:completionHint="ADMIN"
         android:textSize="16sp"></AutoCompleteTextView>
 
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/interprette"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:hint="Interprette"
+        android:gravity="center"
+        android:textColor="@color/noir"
+        android:completionThreshold="1"
+        android:completionHint="Interprette"
+        android:textSize="16sp"></AutoCompleteTextView>
+
 
     <Button
         android:id="@+id/add"
