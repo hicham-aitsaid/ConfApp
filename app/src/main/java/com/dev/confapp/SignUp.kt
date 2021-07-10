@@ -35,7 +35,7 @@ class SignUp : AppCompatActivity() {
                     myRef.child(uniqueID).child("email").setValue(mail)
                     myRef.child(uniqueID).child("type").setValue("audience")
                     myRef.child(uniqueID).child("uid").setValue(uniqueID)
-                    val intent = Intent(applicationContext,test::class.java)
+                    val intent = Intent(applicationContext,MainActivity::class.java)
                     startActivity(intent)
                     Toast.makeText(this, "compte créé", Toast.LENGTH_SHORT).show()
                 } else {
