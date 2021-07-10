@@ -5,8 +5,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
 import com.facebook.react.modules.core.PermissionListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -25,13 +25,17 @@ class test : AppCompatActivity(), JitsiMeetActivityInterface {
 
 
     var extra: String? = null
+    var currentFirebaseUser = FirebaseAuth.getInstance().currentUser
 
+    var id = currentFirebaseUser!!.uid
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_room)
         extra = intent.getStringExtra("token")
+
+
 
     }
 
@@ -40,7 +44,8 @@ class test : AppCompatActivity(), JitsiMeetActivityInterface {
         val options = JitsiMeetConferenceOptions.Builder()
             .setServerURL(URL("https://meet.jit.si/"))
             .setRoom(extra)
-            .setAudioMuted(false)
+            .setAudioMuted(true)
+            .setVideoMuted(true)
             .build()
         JitsiMeetActivity.launch(this, options)
 
@@ -52,7 +57,7 @@ class test : AppCompatActivity(), JitsiMeetActivityInterface {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 var bool = false
                 for(snapshot in dataSnapshot.children){
-                    if( snapshot.child("type").getValue().toString() == "interprete" ){
+                    if( snapshot.key.toString() == id  && snapshot.child("type").getValue().toString() == "interprete" ) {
                         bool = true
                     }
                 }
@@ -92,7 +97,7 @@ class test : AppCompatActivity(), JitsiMeetActivityInterface {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 var bool = false
                 for(snapshot in dataSnapshot.children){
-                    if( snapshot.child("type").getValue().toString() == "interprete" ){
+                    if( snapshot.key.toString() == id  && snapshot.child("type").getValue().toString() == "interprete" ){
                         bool = true
                     }
                 }
@@ -130,7 +135,7 @@ class test : AppCompatActivity(), JitsiMeetActivityInterface {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 var bool = false
                 for(snapshot in dataSnapshot.children){
-                    if( snapshot.child("type").getValue().toString() == "interprete" ){
+                    if( snapshot.key.toString() == id  && snapshot.child("type").getValue().toString() == "interprete" ){
                         bool = true
                     }
                 }
