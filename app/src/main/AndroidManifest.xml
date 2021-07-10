@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".role"></activity>
+        <activity android:name=".test" />
         <activity android:name=".admin" />
         <activity android:name=".SourceRoom" />
-        <activity android:name=".test" />
-        <activity android:name=".CreerRenuion" />
+        <activity android:name=".SignIn" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".SignIn">
+        <activity android:name=".CreerRenuion">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
