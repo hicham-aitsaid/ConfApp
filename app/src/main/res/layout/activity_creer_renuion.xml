@@ -64,10 +64,11 @@
     <AutoCompleteTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/admin"
+        android:inputType="textEmailAddress"
+        android:id="@+id/speaker"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="20dp"
-        android:hint="Admin"
+        android:hint="Speaker"
         android:gravity="center"
         android:textColor="@color/noir"
         android:completionThreshold="1"
@@ -76,15 +77,45 @@
 
     <AutoCompleteTextView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:id="@+id/interprette"
+        android:layout_height="wrap_content"
+        android:id="@+id/interpreteur1"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="20dp"
-        android:hint="Interprette"
+        android:inputType="textEmailAddress"
+
+        android:hint="Interpreteur francais"
         android:gravity="center"
         android:textColor="@color/noir"
         android:completionThreshold="1"
-        android:completionHint="Interprette"
+        android:completionHint="ADMIN"
+        android:textSize="16sp"></AutoCompleteTextView>
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/interpreteur2"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:hint="interpreteur Anglais"
+        android:gravity="center"
+        android:textColor="@color/noir"
+        android:completionThreshold="1"
+        android:completionHint="ADMIN"
+        android:inputType="textEmailAddress"
+
+        android:textSize="16sp"></AutoCompleteTextView>
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/interpreteur3"
+        android:layout_marginHorizontal="30dp"
+        android:inputType="textEmailAddress"
+
+        android:layout_marginTop="20dp"
+        android:hint="interpreteur Arabe"
+        android:gravity="center"
+        android:textColor="@color/noir"
+        android:completionThreshold="1"
+        android:completionHint="ADMIN"
         android:textSize="16sp"></AutoCompleteTextView>
 
 
